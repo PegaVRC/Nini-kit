@@ -10,6 +10,11 @@
   "private": true,
   "dependencies": {
     "@remotion/cli": "4.0.544",
+    "@remotion/fonts": "4.0.544",
+    "@remotion/media": "4.0.544",
+    "@remotion/shapes": "4.0.544",
+    "@remotion/transitions": "4.0.544",
+    "mediabunny": "1.66.0",
     "react": "19.3.1",
     "react-dom": "19.3.1",
     "remotion": "4.0.544"
@@ -26,7 +31,8 @@
     "dev": "remotion studio",
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
-    "lint": "eslint src && tsc"
+    "lint": "eslint src && tsc",
+    "episodio": "node scripts/render-episodio.mjs"
   },
   "allowScripts": {
     "esbuild": false
