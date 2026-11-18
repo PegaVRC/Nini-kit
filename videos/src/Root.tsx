@@ -1,11 +1,13 @@
 import { Composition } from "remotion";
 import { MyComposition } from "./Composition";
+import { Episodios } from "./nini/Episodios";
 import { Prueba } from "./Prueba";
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
       <MyComposition />
+      <Episodios />
       <Composition
         id="Prueba"
         component={Prueba}
