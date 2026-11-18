@@ -1,3 +1,4 @@
+import { Audio } from "@remotion/media";
 import {
   AbsoluteFill,
   Easing,
@@ -14,8 +15,10 @@ import { COLORES, FUENTE, PALETA } from "./tema";
 export const Intro: React.FC<{
   logo: string;
   logoExiste: boolean;
+  sonido: string;
+  sonidoExiste: boolean;
   titulo?: string;
-}> = ({ logo, logoExiste, titulo }) => {
+}> = ({ logo, logoExiste, sonido, sonidoExiste, titulo }) => {
   const frame = useCurrentFrame();
   const { fps, width, height, durationInFrames } = useVideoConfig();
   const vertical = height > width;
@@ -44,6 +47,7 @@ export const Intro: React.FC<{
         gap: 30,
       }}
     >
+      {sonidoExiste ? <Audio name="Sonido de la intro" src={staticFile(sonido)} /> : null}
       <Destellos cantidad={vertical ? 22 : 18} semilla="intro" />
       <div
         style={{

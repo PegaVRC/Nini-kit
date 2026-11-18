@@ -39,6 +39,8 @@ export type EpisodioJson = {
   /** Duración de los fundidos entre escenas. Por defecto 0.5 s. */
   transicionSegundos?: number;
   logo?: string;
+  /** Sonido de la intro. Por defecto audio/efectos/intro.wav. Usa "" para quitarlo. */
+  sonidoIntro?: string;
   cierre?: {
     imagen?: string;
     texto?: string;
@@ -75,6 +77,7 @@ export type EpisodioResuelto = {
   clips: ClipResuelto[];
   musicaExiste: boolean;
   logoExiste: boolean;
+  sonidoIntroExiste: boolean;
   imagenCierreExiste: boolean;
   /** Tramos [inicio, fin) en frames globales donde suena narración. */
   tramosNarracion: [number, number][];

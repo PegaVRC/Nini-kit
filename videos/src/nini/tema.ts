@@ -29,6 +29,7 @@ export const DURACION_CIERRE_SEG = 5;
 
 // Rutas por defecto, relativas a la carpeta public/.
 export const LOGO_POR_DEFECTO = "nini/imagenes/logo.png";
+export const SONIDO_INTRO_POR_DEFECTO = "audio/efectos/intro.wav";
 export const IMAGEN_CIERRE_POR_DEFECTO = "nini/imagenes/nini.png";
 
 export const FORMATOS = {
