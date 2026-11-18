@@ -1,0 +1,53 @@
+{
+  "titulo": "Nini se lava los dientes",
+  "musica": "audio/musica/fondo.mp3",
+  "musicaVolumen": 0.18,
+  "musicaVolumenNarracion": 0.05,
+  "transicionSegundos": 0.5,
+  "clips": [
+    {
+      "archivo": "nini/clips/dientes.mp4",
+      "texto": "¡A cepillarse!",
+      "narracion": "audio/narracion/dientes-1.mp3",
+      "inicioSegundos": 0,
+      "duracionSegundos": 2.4,
+      "encuadre": 50
+    },
+    {
+      "archivo": "nini/clips/dientes.mp4",
+      "texto": "Arriba, abajo",
+      "narracion": "audio/narracion/dientes-2.mp3",
+      "inicioSegundos": 2.5,
+      "duracionSegundos": 2.4,
+      "encuadre": 50
+    },
+    {
+      "archivo": "nini/clips/dientes.mp4",
+      "texto": "¡A enjuagar!",
+      "narracion": "audio/narracion/dientes-3.mp3",
+      "educativo": {
+        "tipo": "palabra",
+        "valor": "agua"
+      },
+      "inicioSegundos": 5.0,
+      "duracionSegundos": 2.4,
+      "encuadre": 50
+    },
+    {
+      "archivo": "nini/clips/dientes.mp4",
+      "texto": "¡Dientes limpios!",
+      "narracion": "audio/narracion/dientes-4.mp3",
+      "educativo": {
+        "tipo": "palabra",
+        "valor": "limpio"
+      },
+      "inicioSegundos": 7.5,
+      "encuadre": 50
+    }
+  ],
+  "cierre": {
+    "imagen": "nini/imagenes/nini.png",
+    "texto": "¡Chao, amiguitos!",
+    "invitacion": "¡Suscríbete!"
+  }
+}
