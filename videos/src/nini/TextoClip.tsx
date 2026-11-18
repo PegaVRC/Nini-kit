@@ -24,7 +24,7 @@ export const TextoClip: React.FC<{ texto: string; retraso: number }> = ({
         display: "flex",
         justifyContent: "center",
         flexWrap: "wrap",
-        gap: "0 0.3em",
+        gap: "0 0.45em",
         fontFamily: FUENTE,
         fontWeight: 700,
         fontSize,

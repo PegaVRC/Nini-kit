@@ -117,6 +117,7 @@ Para ver el episodio antes de renderizarlo, ejecuta `npm run dev` y abre la carp
 | `inicioSegundos` | No | Desde qué segundo del clip empezar. Por defecto `0`. |
 | `duracionSegundos` | No | Cuántos segundos del clip usar. Por defecto, hasta el final del clip. |
 | `encuadre` | No | Dónde está Nini en el clip, de `0` (izquierda) a `100` (derecha). Por defecto `50`. En el formato vertical, el recorte se centra en ese punto. |
+| `zoom` | No | Acerca la imagen desde el centro: `1` = normal, `1.2` = 20 % más cerca. Sirve para sacar del cuadro letreros o marcas que traiga el clip. Solo se aplica en 16:9, porque en 9:16 el recorte ya acerca la imagen. Por defecto `1`. |
 | `volumenClip` | No | Volumen del sonido propio del clip, de 0 a 1. Por defecto `0` (silenciado). |
 
 ### Elementos educativos

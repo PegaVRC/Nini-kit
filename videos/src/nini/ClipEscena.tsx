@@ -40,6 +40,7 @@ const ClipFaltante: React.FC<{ archivo: string }> = ({ archivo }) => (
  * Coloca el video cubriendo todo el cuadro. Si el clip es más ancho que el
  * formato (p. ej. clip 16:9 en formato 9:16), se recorta centrado en Nini
  * usando "encuadre" (0 = izquierda, 50 = centro, 100 = derecha).
+ * "zoom" acerca la imagen desde el centro (solo en el formato horizontal).
  */
 const VideoEncuadrado: React.FC<{ clip: ClipResuelto }> = ({ clip }) => {
   const { width: W, height: H } = useVideoConfig();
@@ -54,7 +55,9 @@ const VideoEncuadrado: React.FC<{ clip: ClipResuelto }> = ({ clip }) => {
 
   if (aspectoFuente >= aspectoCuadro * 0.8) {
     // Cubrir el cuadro, recortando a los lados según el encuadre.
-    const alto = Math.max(H, W / aspectoFuente);
+    // En vertical el recorte ya acerca la imagen, así que el zoom solo se usa en horizontal.
+    const zoom = W >= H ? Math.max(1, clip.zoom ?? 1) : 1;
+    const alto = Math.max(H, W / aspectoFuente) * zoom;
     const ancho = alto * aspectoFuente;
     const izquierda = Math.min(0, Math.max(W - ancho, W / 2 - enfoque * ancho));
     return (

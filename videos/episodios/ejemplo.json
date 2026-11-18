@@ -1,17 +1,56 @@
 {
-  "titulo": "¡Hola, Nini!",
+  "titulo": "Nini y la manzana",
   "musica": "audio/musica/fondo.mp3",
   "musicaVolumen": 0.18,
   "musicaVolumenNarracion": 0.05,
   "transicionSegundos": 0.5,
   "clips": [
     {
-      "archivo": "nini/clips/clip-01.mp4",
-      "texto": "¡Hola, amiguitos!",
-      "narracion": "audio/narracion/clip-01.mp3",
-      "educativo": { "tipo": "numero", "valor": 3 },
-      "duracionSegundos": 7,
-      "encuadre": 50
+      "archivo": "nini/clips/nini-manzana.mp4",
+      "texto": "¡Una manzana!",
+      "narracion": "audio/narracion/manzana-1.mp3",
+      "educativo": {
+        "tipo": "color",
+        "valor": "rojo"
+      },
+      "inicioSegundos": 0,
+      "duracionSegundos": 2.4,
+      "encuadre": 52,
+      "zoom": 1.3,
+      "volumenClip": 0.8
+    },
+    {
+      "archivo": "nini/clips/nini-manzana.mp4",
+      "texto": "¡Uy, qué pesada!",
+      "narracion": "audio/narracion/manzana-2.mp3",
+      "inicioSegundos": 2.5,
+      "duracionSegundos": 2.6,
+      "encuadre": 55,
+      "zoom": 1.3,
+      "volumenClip": 0.8
+    },
+    {
+      "archivo": "nini/clips/nini-manzana.mp4",
+      "texto": "¿Me ayudas?",
+      "narracion": "audio/narracion/manzana-3.mp3",
+      "inicioSegundos": 5.2,
+      "duracionSegundos": 2.2,
+      "encuadre": 50,
+      "zoom": 1.3,
+      "volumenClip": 0.8
+    },
+    {
+      "archivo": "nini/clips/nini-manzana.mp4",
+      "texto": "¡A compartir!",
+      "narracion": "audio/narracion/manzana-4.mp3",
+      "educativo": {
+        "tipo": "numero",
+        "valor": 2
+      },
+      "inicioSegundos": 7.5,
+      "encuadre": 50,
+      "zoom": 1.3,
+      "volumenClip": 0.8
     }
   ],
   "cierre": {

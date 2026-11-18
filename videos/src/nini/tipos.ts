@@ -22,6 +22,8 @@ export type ClipJson = {
   duracionSegundos?: number;
   /** Posición horizontal de Nini en el clip, de 0 (izquierda) a 100 (derecha). Por defecto 50. Se usa al recortar a vertical. */
   encuadre?: number;
+  /** Acercamiento del clip (1 = normal, 1.2 = 20 % más cerca). Útil para sacar del cuadro letreros que traiga el clip. Solo se aplica en el formato horizontal. Por defecto 1. */
+  zoom?: number;
   /** Volumen del audio propio del clip, de 0 a 1. Por defecto 0 (silenciado). */
   volumenClip?: number;
 };
