@@ -1,0 +1,60 @@
+{
+  "titulo": "Nini ordena sus juguetes",
+  "musica": "audio/musica/fondo.mp3",
+  "musicaVolumen": 0.18,
+  "musicaVolumenNarracion": 0.05,
+  "transicionSegundos": 0.5,
+  "clips": [
+    {
+      "archivo": "nini/clips/juguetes.mp4",
+      "texto": "¡Qué desorden!",
+      "narracion": "audio/narracion/juguetes-1.mp3",
+      "inicioSegundos": 0,
+      "duracionSegundos": 2.4,
+      "encuadre": 50
+    },
+    {
+      "archivo": "nini/clips/juguetes.mp4",
+      "texto": "La pelota",
+      "narracion": "audio/narracion/juguetes-2.mp3",
+      "educativo": {
+        "tipo": "figura",
+        "valor": "círculo",
+        "color": "rojo"
+      },
+      "inicioSegundos": 2.5,
+      "duracionSegundos": 2.4,
+      "encuadre": 50
+    },
+    {
+      "archivo": "nini/clips/juguetes.mp4",
+      "texto": "El bloque",
+      "narracion": "audio/narracion/juguetes-3.mp3",
+      "educativo": {
+        "tipo": "figura",
+        "valor": "cuadrado",
+        "color": "azul"
+      },
+      "inicioSegundos": 5.0,
+      "duracionSegundos": 2.4,
+      "encuadre": 50
+    },
+    {
+      "archivo": "nini/clips/juguetes.mp4",
+      "texto": "¡Todo ordenado!",
+      "narracion": "audio/narracion/juguetes-4.mp3",
+      "educativo": {
+        "tipo": "figura",
+        "valor": "estrella",
+        "color": "amarillo"
+      },
+      "inicioSegundos": 7.5,
+      "encuadre": 50
+    }
+  ],
+  "cierre": {
+    "imagen": "nini/imagenes/nini.png",
+    "texto": "¡Chao, amiguitos!",
+    "invitacion": "¡Suscríbete!"
+  }
+}

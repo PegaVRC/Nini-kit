@@ -12,7 +12,7 @@ Cada episodio se arma **editando solo un archivo JSON**. El sistema se encarga d
 
 ## Estructura de cada video
 
-1. **Intro (4 s):** `public/nini/imagenes/logo.png` con zoom suave, destellos y rebote.
+1. **Intro (4 s):** `public/nini/imagenes/logo.png` con zoom suave, destellos y rebote, y una melodía de campanitas (`public/audio/efectos/intro.wav`).
 2. **Episodio:** los clips en el orden del JSON, unidos con fundidos suaves.
    Cada clip puede llevar un texto en pantalla, una narración y un elemento educativo.
 3. **Cierre (5 s):** imagen de Nini, "¡Chao, amiguitos!" y un botón de "¡Suscríbete!".
@@ -30,6 +30,7 @@ public/
 │       ├── logo.png    ← logo para la intro
 │       └── nini.png    ← imagen de Nini para el cierre
 ├── audio/
+│   ├── efectos/        ← intro.wav: melodía de la intro
 │   ├── musica/         ← música de fondo (.mp3)
 │   └── narracion/      ← narraciones (.mp3), una por clip
 └── fonts/              ← letra Fredoka (no tocar)
@@ -101,6 +102,7 @@ Para ver el episodio antes de renderizarlo, ejecuta `npm run dev` y abre la carp
 | `musicaVolumen` | No | Volumen normal de la música, de 0 a 1. Por defecto `0.18`. |
 | `musicaVolumenNarracion` | No | Volumen de la música mientras hay narración. Por defecto `0.05`. |
 | `transicionSegundos` | No | Duración de cada fundido. Por defecto `0.5`. |
+| `sonidoIntro` | No | Sonido de la intro. Por defecto `audio/efectos/intro.wav`; usa `""` para quitarlo. |
 | `logo` | No | Otra imagen para la intro. Por defecto `nini/imagenes/logo.png`. |
 | `cierre.imagen` | No | Imagen del cierre. Por defecto `nini/imagenes/nini.png`. |
 | `cierre.texto` | No | Por defecto "¡Chao, amiguitos!". |
@@ -152,6 +154,16 @@ La duración total se calcula sola:
 Por ejemplo, el episodio de ejemplo tiene un clip de 7 s: 4 + 7 + 5 − 2 × 0,5 = **15 s**.
 
 Si una narración es más larga que su clip, se corta al terminar el clip. En ese caso, aumenta `duracionSegundos` o usa un clip más largo.
+
+## Sonido de la intro
+
+`public/audio/efectos/intro.wav` es una melodía original (un "whoosh", un "boing", campanitas y un "¡ta-dá!") sincronizada con la animación de la intro. Se genera con código:
+
+```bash
+python3 scripts/generar-sonido-intro.py
+```
+
+Para usar otro sonido, reemplaza ese archivo o indica otro en `sonidoIntro`. Mientras suena la intro, la música de fondo queda baja.
 
 ## Colores y letra
 

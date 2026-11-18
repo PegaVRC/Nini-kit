@@ -6,7 +6,11 @@ import { Cierre } from "./Cierre";
 import { ClipEscena } from "./ClipEscena";
 import { Intro } from "./Intro";
 import { MusicaFondo } from "./MusicaFondo";
-import { IMAGEN_CIERRE_POR_DEFECTO, LOGO_POR_DEFECTO } from "./tema";
+import {
+  IMAGEN_CIERRE_POR_DEFECTO,
+  LOGO_POR_DEFECTO,
+  SONIDO_INTRO_POR_DEFECTO,
+} from "./tema";
 import type { EpisodioProps } from "./tipos";
 
 export const Episodio: React.FC<EpisodioProps> = ({ episodio, resuelto }) => {
@@ -27,6 +31,8 @@ export const Episodio: React.FC<EpisodioProps> = ({ episodio, resuelto }) => {
           <Intro
             logo={episodio.logo ?? LOGO_POR_DEFECTO}
             logoExiste={resuelto.logoExiste}
+            sonido={episodio.sonidoIntro ?? SONIDO_INTRO_POR_DEFECTO}
+            sonidoExiste={resuelto.sonidoIntroExiste}
             titulo={episodio.titulo}
           />
         </TransitionSeries.Sequence>

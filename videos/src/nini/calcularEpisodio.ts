@@ -7,6 +7,7 @@ import {
   FPS,
   IMAGEN_CIERRE_POR_DEFECTO,
   LOGO_POR_DEFECTO,
+  SONIDO_INTRO_POR_DEFECTO,
 } from "./tema";
 import type { ClipResuelto, EpisodioProps } from "./tipos";
 
@@ -103,11 +104,17 @@ export const calcularEpisodio: CalculateMetadataFunction<
 
   const total = comienzo + cierreFrames;
 
-  const [musicaExiste, logoExiste, imagenCierreExiste] = await Promise.all([
-    existeArchivo(episodio.musica),
-    existeArchivo(episodio.logo ?? LOGO_POR_DEFECTO),
-    existeArchivo(episodio.cierre?.imagen ?? IMAGEN_CIERRE_POR_DEFECTO),
-  ]);
+  const [musicaExiste, logoExiste, imagenCierreExiste, sonidoIntroExiste] =
+    await Promise.all([
+      existeArchivo(episodio.musica),
+      existeArchivo(episodio.logo ?? LOGO_POR_DEFECTO),
+      existeArchivo(episodio.cierre?.imagen ?? IMAGEN_CIERRE_POR_DEFECTO),
+      existeArchivo(episodio.sonidoIntro ?? SONIDO_INTRO_POR_DEFECTO),
+    ]);
+  if (sonidoIntroExiste) {
+    // La música queda baja mientras suena la melodía de la intro.
+    tramosNarracion.unshift([0, introFrames]);
+  }
   if (episodio.musica && !musicaExiste) {
     console.warn(`[${slug}] Falta la música public/${episodio.musica}.`);
   }
@@ -128,6 +135,7 @@ export const calcularEpisodio: CalculateMetadataFunction<
         clips,
         musicaExiste,
         logoExiste,
+        sonidoIntroExiste,
         imagenCierreExiste,
         tramosNarracion,
       },
